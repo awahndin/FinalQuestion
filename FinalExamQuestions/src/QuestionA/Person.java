@@ -8,100 +8,14 @@ import java.util.Date;
  */
 public abstract class Person {
 
-	private Date DOB;
-	private String FirstName;
-	private String MiddleName;
-	private String LastName;
-	private String address;
-	private String phone_number;
-	private String email_address;
-
-	public String getFirstName() {
-		return FirstName;
-	}
-
-	public void setFirstName(String FirstName) {
-		this.FirstName = FirstName;
-	}
-
-	public String getMiddleName() {
-		return MiddleName;
-	}
-
-	public void setMiddleName(String MiddleName) {
-		this.MiddleName = MiddleName;
-	}
-
-	public String getLastName() {
-		return LastName;
-	}
-
-	public void setLastName(String LastName) {
-		this.LastName = LastName;
-	}
-
-	public Date getDOB() {
-		return DOB;
-	}
-
-	public void setDOB(Date DOB) {
-		this.DOB = DOB;
-	}
-
-	public void setAddress(String newAddress) {
-		address = newAddress;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setPhone(String newPhone_number) {
-		phone_number = newPhone_number;
-	}
-
-	public String getPhone() {
-		return phone_number;
-	}
-
-	public void setEmail(String newEmail) {
-		email_address = newEmail;
-	}
-
-	public String getEmail() {
-		return email_address;
-	}
-
-	/*
-	 * Constructors No Arg Constructor
-	 */
-	public Person() {
-
-	}
-
-	/*
-	 * Constructors Constructor with arguments
-	 */
-
-	public Person(String FirstName, String MiddleName, String LastName,
-			Date DOB, String Address, String Phone_number, String Email) {
-		this.FirstName = FirstName;
-		this.MiddleName = MiddleName;
-		this.LastName = LastName;
-		this.DOB = DOB;
-		this.address = Address;
-		this.phone_number = Phone_number;
-		this.email_address = Email;
-		
-	}
 
 	public void PrintName() {
-		System.out.println(this.FirstName + ' ' + this.MiddleName + ' '
-				+ this.LastName);
+		System.out.println(iPersonRead.FirstName + ' ' + iPersonRead.MiddleName + ' '
+				+ iPersonRead.LastName);
 	}
 
 	public void PrintDOB() {
-		System.out.println(this.DOB);
+		System.out.println(iPersonRead.DOB);
 	}
 
 	public int PrintAge() {
@@ -109,7 +23,7 @@ public abstract class Person {
 		Calendar birthDate = Calendar.getInstance();
 
 		int age = 0;
-		birthDate.setTime(this.DOB);
+		birthDate.setTime(iPersonRead.DOB);
 		if (birthDate.after(today)) {
 			throw new IllegalArgumentException("Can't be born in the future");
 		}
